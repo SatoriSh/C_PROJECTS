@@ -62,7 +62,17 @@ int main(void)
     }
     printf("\n");
 
-    
+    int age;
+    printf("Input your age: \n/> ");
+    scanf("%d", &age);
+    printf("age = %d\n", age);
+
+    while (getchar() != '\n'); // очистка буффера
+
+    char name[10];
+    printf("Input your name: \n/> ");
+    scanf("%10[^\n]", name); // %10[^\n] — перестаем считывать символы только после \n
+    printf("name = %s\n", name);
 
     return 0;
 }
