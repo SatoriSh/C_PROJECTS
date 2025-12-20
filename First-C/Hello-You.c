@@ -40,12 +40,29 @@ int main(void)
         printf("\n\n");
     }
 
-    int numbers[3];
+    int numbers[3] = { 10,20,30 };
     for (int i = 0; i < sizeof(numbers) / sizeof(int); i++)
     {
         numbers[i] = i + 1;
         printf("numbers[%d] = %d\n", i, numbers[i]);
     }
+    printf("\n");
+
+    int matrix[3][2];
+
+    int count = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            matrix[i][j] = ++count;
+            printf("%d ", matrix[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+    
 
     return 0;
 }
