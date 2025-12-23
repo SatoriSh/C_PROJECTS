@@ -62,17 +62,40 @@ int main(void)
     }
     printf("\n");
 
-    int age;
-    printf("Input your age: \n/> ");
-    scanf("%d", &age);
-    printf("age = %d\n", age);
+    // int age;
+    // printf("Input your age: \n/> ");
+    // scanf("%d", &age);
+    // printf("age = %d\n", age);
 
-    while (getchar() != '\n'); // очистка буффера
+    // while (getchar() != '\n'); // очистка буффера
 
-    char name[10];
-    printf("Input your name: \n/> ");
-    scanf("%10[^\n]", name); // %10[^\n] — перестаем считывать символы только после \n
-    printf("name = %s\n", name);
+    // char name[10];
+    // printf("Input your name: \n/> ");
+    // scanf("%10[^\n]", name); // %10[^\n] — перестаем считывать символы только после \n
+    // printf("name = %s\n", name);
+
+    // & — получить адрес переменной
+    // * — получить значение, которое лежит по адресу указателя
+    // тип* — при объявлении указателя, это переменная-указатель хранящая адрес на тип
+
+    int x = 10;
+    int* px = &x;
+    printf("x value = %d (*px)\nx address = %p ((void*)px)\n", *px, (void*)px);
+
+
+    int y = *px;
+    printf("\ny = %d (*px) in %p ((void*)px)\n", y, (void*)px);
+
+    *px = 15;
+    printf("\n*px = 15 -> x = %d in %p\n\n\n", x, (void*)px);
+
+
+    int arr[3] = { 10,20,30 };
+
+    int* parr = arr;
+    printf("Arr[0] — %d\n", *parr);
+    printf("Arr[1] — %d\n", *++parr);
+    printf("Arr[2] — %d\n", *++parr);
 
     return 0;
 }
